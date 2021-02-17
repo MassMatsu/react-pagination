@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
+import paginate from './utils';
 
 export const useFetch = (url) => {
   const [loading, setLoading] = useState(false);
@@ -8,8 +9,9 @@ export const useFetch = (url) => {
     setLoading(true);
     const response = await fetch(url);
     const data = await response.json();
-
-    setData(data);
+    // create array of array, and set it as data
+    const groupedData = paginate(data);
+    setData(groupedData);
     setLoading(false);
   }, [url]);
 
