@@ -1,24 +1,21 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
-const url = 'https://api.github.com/users/john-smilga/followers?per_page=100';
-
-export default function useFetch() {
+export const useFetch = (url) => {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState([]);
 
-  const fetchData = async () => {
+  const fetchData = useCallback(async () => {
     setLoading(true);
     const response = await fetch(url);
     const data = await response.json();
 
-    //console.log(data);
     setData(data);
     setLoading(false);
-  };
+  }, [url]);
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [url, fetchData]);
 
   return { loading, data };
-}
+};
