@@ -133,7 +133,7 @@ Pagination
 .underline {
   width: 8rem;
   height: 0.25rem;
-  background: var(--clr-primary-5);
+  background: var(--clr-primary-3);
   margin: 0 auto;
 }
 .followers {
@@ -177,7 +177,7 @@ Pagination
   letter-spacing: 1.6px;
   font-size: 0.75rem;
   color: var(--clr-white);
-  background: var(--clr-primary-5);
+  background: var(--clr-primary-3);
   border-radius: var(--radius);
   border-color: transparent;
   text-transform: uppercase;
@@ -193,7 +193,7 @@ Pagination
 .page-btn {
   width: 2rem;
   height: 2rem;
-  background: var(--clr-primary-7);
+  background: var(--clr-primary-8);
   border-color: transparent;
   border-radius: 5px;
   cursor: pointer;
